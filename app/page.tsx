@@ -1,10 +1,5 @@
-import RecipeView from "@/components/recipe-main";
-import AppLayout from "@/components/app-layout";
-
-export default function HomePage() {
-  return (
-    <AppLayout currentPage="home">
-      <RecipeView recipeId="sample" />
-    </AppLayout>
-  );
-}
+import { useState, useEffect } from 'react';
+import RecipeCard from '@/components/RecipeCard';
+import VideoSkeleton from '@/components/VideoSkeleton';
+import SearchBar from '@/components/SearchBar';
+import MobileNavigation from '@/components/MobileNavigation';  // ← 이 줄 추가! ✅
