@@ -1,10 +1,5 @@
-import SearchPage from '@/components/search-page'
-import AppLayout from '@/components/app-layout'
-
-export default function Search() {
-  return (
-    <AppLayout currentPage="search">
-      <SearchPage />
-    </AppLayout>
-  )
-}
+import SearchBar from '../../src/components/SearchBar';
+import RecipeCard from '../../src/components/RecipeCard';
+import MobileNavigation from '../../src/components/MobileNavigation';
+import { recipes } from '../../src/data/recipes';
+import { Recipe } from '../../src/types/recipe';

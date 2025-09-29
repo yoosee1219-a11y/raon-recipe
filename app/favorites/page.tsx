@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import RecipeCard from '@/components/RecipeCard';
-import MobileNavigation from '@/components/MobileNavigation';
-import { Recipe } from '@/types/recipe';
-import { recipes } from '@/data/recipes';
+import RecipeCard from '../../src/components/RecipeCard';
+import MobileNavigation from '../../src/components/MobileNavigation';
+import { Recipe } from '../../src/types/recipe';
+import { recipes } from '../../src/data/recipes';
 
 export default function FavoritesPage() {
   const [favorites, setFavorites] = useState<string[]>([]);
