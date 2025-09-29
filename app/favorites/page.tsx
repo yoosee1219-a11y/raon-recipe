@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import RecipeCard from '../../src/components/RecipeCard';
-import MobileNavigation from '../../src/components/MobileNavigation';
-import { Recipe } from '../../src/types/recipe';
-import { recipes } from '../../src/data/recipes';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import RecipeCard from "@/src/components/RecipeCard";
+import MobileNavigation from "@/src/components/MobileNavigation";
+import { recipes } from "@/src/data/recipes";
+import { Recipe } from "@/src/types/recipe";
 
 export default function FavoritesPage() {
   const [favorites, setFavorites] = useState<string[]>([]);
   const [favoriteRecipes, setFavoriteRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('favorites');
+    const saved = localStorage.getItem("favorites");
     if (saved) {
       const favoriteIds = JSON.parse(saved);
       setFavorites(favoriteIds);
-      
-      const favRecipes = recipes.filter(recipe => 
+
+      const favRecipes = recipes.filter((recipe) =>
         favoriteIds.includes(recipe.id)
       );
       setFavoriteRecipes(favRecipes);
@@ -25,10 +25,10 @@ export default function FavoritesPage() {
   }, []);
 
   const removeFavorite = (id: string) => {
-    const updated = favorites.filter(fav => fav !== id);
+    const updated = favorites.filter((fav) => fav !== id);
     setFavorites(updated);
-    localStorage.setItem('favorites', JSON.stringify(updated));
-    setFavoriteRecipes(favoriteRecipes.filter(recipe => recipe.id !== id));
+    localStorage.setItem("favorites", JSON.stringify(updated));
+    setFavoriteRecipes(favoriteRecipes.filter((recipe) => recipe.id !== id));
   };
 
   return (
@@ -84,7 +84,7 @@ export default function FavoritesPage() {
           </div>
         )}
       </div>
-      
+
       <MobileNavigation />
     </>
   );
