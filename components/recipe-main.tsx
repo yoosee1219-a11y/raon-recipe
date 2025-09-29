@@ -555,7 +555,6 @@ export default function RecipeView({
           <Skeleton className="h-4 w-20" />
         </div>
         <Skeleton className="h-32 w-full mt-6" />
-        <MobileNavigation />
       </div>
     );
   }
